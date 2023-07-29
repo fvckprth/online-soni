@@ -44,3 +44,11 @@ mux-player {
 .on-top {
   z-index: 2;
 }
+
+.left-arrow-cursor {
+  cursor: url('/left-cursor.svg'), auto;
+}
+
+.right-arrow-cursor {
+  cursor: url('/right-cursor.svg'), auto;
+}
