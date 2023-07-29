@@ -525,32 +525,23 @@ video {
 .bottom-0 {
   bottom: 0px;
 }
+.bottom-6 {
+  bottom: 1.5rem;
+}
 .left-0 {
   left: 0px;
 }
 .right-2 {
   right: 0.5rem;
 }
+.right-8 {
+  right: 2rem;
+}
 .top-0 {
   top: 0px;
 }
 .top-2 {
   top: 0.5rem;
-}
-.right-8 {
-  right: 2rem;
-}
-.top-8 {
-  top: 2rem;
-}
-.bottom-8 {
-  bottom: 2rem;
-}
-.bottom-4 {
-  bottom: 1rem;
-}
-.bottom-6 {
-  bottom: 1.5rem;
 }
 .z-0 {
   z-index: 0;
@@ -712,6 +703,14 @@ mux-player {
 
 .on-top {
   z-index: 2;
+}
+
+.left-arrow-cursor {
+  cursor: url('/left-cursor.svg'), auto;
+}
+
+.right-arrow-cursor {
+  cursor: url('/right-cursor.svg'), auto;
 }
 
 .hover\:opacity-25:hover {
