@@ -570,6 +570,9 @@ video {
 .right-0 {
   right: 0px;
 }
+.right-4 {
+  right: 1rem;
+}
 .m-4 {
   margin: 1rem;
 }
