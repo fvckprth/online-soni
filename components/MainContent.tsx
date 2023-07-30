@@ -27,15 +27,16 @@ function MainContent() {
                 onMouseEnter={() => setHoverLeft(true)}
                 onMouseLeave={() => setHoverLeft(false)}
             >
-                {projects[currentIndex]?.leftImage && (
+                {projects.map((project, index) => (
                     <Image 
+                        key={index}
                         priority
-                        src={projects[currentIndex].leftImage} 
+                        src={project.leftImage} 
                         layout='fill'
-                        className='object-cover'
-                        alt={`Left image of ${projects[currentIndex].name}`}
+                        className={`object-cover ${currentIndex === index ? 'block' : 'hidden'}`}
+                        alt={`Left image of ${project.name}`}
                     />
-                )}
+                ))}
             </div>
             <div 
                 className={`relative flex-grow w-0 ${hoverRight ? 'right-arrow-cursor' : ''}`} 
@@ -43,15 +44,16 @@ function MainContent() {
                 onMouseEnter={() => setHoverRight(true)}
                 onMouseLeave={() => setHoverRight(false)}
             >
-                {projects[currentIndex]?.rightImage && (
+                {projects.map((project, index) => (
                     <Image 
+                        key={index}
                         priority
-                        src={projects[currentIndex].rightImage}
+                        src={project.rightImage}
                         layout='fill'
-                        className='object-cover'
-                        alt={`Right image of ${projects[currentIndex].name}`}
+                        className={`object-cover ${currentIndex === index ? 'block' : 'hidden'}`}
+                        alt={`Right image of ${project.name}`}
                     />
-                )}
+                ))}
             </div>
         </div>
     );

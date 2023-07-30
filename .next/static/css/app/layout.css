@@ -560,8 +560,14 @@ video {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
+.block {
+  display: block;
+}
 .flex {
   display: flex;
+}
+.hidden {
+  display: none;
 }
 .h-48 {
   height: 12rem;
@@ -586,12 +592,6 @@ video {
 }
 .flex-grow {
   flex-grow: 1;
-}
-.cursor-zoom-in {
-  cursor: zoom-in;
-}
-.cursor-zoom-out {
-  cursor: zoom-out;
 }
 .flex-row {
   flex-direction: row;
@@ -808,4 +808,3 @@ mux-player {
     line-height: 1.5rem;
   }
 }
-
