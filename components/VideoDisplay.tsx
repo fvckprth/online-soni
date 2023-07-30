@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import MuxPlayer from '@mux/mux-player-react';
 
 type VideoDisplayProps = {
@@ -11,7 +11,6 @@ type VideoDisplayProps = {
 function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
   
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<any>(null);
 
   // Define styles for fullscreen and minimized video player
   const containerStyles = isMinimized 
@@ -19,23 +18,20 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
     : 'top-0 left-0 w-full h-screen';
 
   const toggleMute = () => {
-    const currentState = isMuted;
-    if (videoRef.current) {
-      videoRef.current.muted = currentState;
-    }
-    setIsMuted(!currentState);
+    setIsMuted(!isMuted);
   };
 
   return (
     <div className={`fixed ${containerStyles} z-0`} onClick={onToggle}>
       <div className='flex justify-center items-center w-full h-full'>
         <MuxPlayer
-            ref={videoRef}
             streamType="on-demand"
+            preferPlayback
             playbackId="DsWrR026AJqjOtlKB02HuCROgAPzwCP2ok0002HxsJy3pcY"
             preLoad="auto"
             autoPlay="any"
             loop
+            playInline
             maxResolution="1080p"
             muted={isMuted}
         />
