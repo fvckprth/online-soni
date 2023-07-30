@@ -32,7 +32,7 @@ function MainContent() {
                         priority
                         src={projects[currentIndex].leftImage} 
                         layout='fill'
-                        objectFit='cover'
+                        className='object-cover'
                         alt={`Left image of ${projects[currentIndex].name}`}
                     />
                 )}
@@ -48,7 +48,7 @@ function MainContent() {
                         priority
                         src={projects[currentIndex].rightImage}
                         layout='fill'
-                        objectFit='cover'
+                        className='object-cover'
                         alt={`Right image of ${projects[currentIndex].name}`}
                     />
                 )}
