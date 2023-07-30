@@ -23,6 +23,7 @@
 mux-player {
   --controls: none;
   --media-object-fit: cover;
+  --mute-button: block;
   position: absolute;
   inset: 0;
   z-index: 0;
