@@ -4,14 +4,17 @@ const nextConfig = {
       appDir: true,
     },
     images: {
+      formats: ['image/avif','image/webp'],
+      domains: ['cdn.sanity.io'],  // Add this line
       remotePatterns: [
         {
           protocol: 'https',
           hostname: 'cdn.sanity.io',
-          port: '',
+          pathname: '/images/*',
         },
       ],
     },
-  }
+  };
   
-  module.exports = nextConfig
+  module.exports = nextConfig;
+  
