@@ -546,6 +546,9 @@ video {
 .bottom-48 {
   bottom: 12rem;
 }
+.bottom-6 {
+  bottom: 1.5rem;
+}
 .m-4 {
   margin: 1rem;
 }
