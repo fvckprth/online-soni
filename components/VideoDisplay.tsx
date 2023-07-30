@@ -29,6 +29,7 @@ const toggleMute = () => {
             style={{ height: '100%', maxWidth: '100%' }}
             playbackId="DsWrR026AJqjOtlKB02HuCROgAPzwCP2ok0002HxsJy3pcY"
             streamType="on-demand"
+            playsInline
             autoPlay="any"
             muted={isMuted}
         />

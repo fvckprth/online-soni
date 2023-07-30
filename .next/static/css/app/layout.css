@@ -540,14 +540,8 @@ video {
 .top-2 {
   top: 0.5rem;
 }
-.top-6 {
-  top: 1.5rem;
-}
 .top-48 {
   top: 12rem;
-}
-.bottom-48 {
-  bottom: 12rem;
 }
 .m-4 {
   margin: 1rem;
@@ -683,7 +677,6 @@ video {
 mux-player {
   --controls: none;
   --media-object-fit: cover;
-  --mute-button: block;
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -726,17 +719,6 @@ mux-player {
 
   .md\:top-6 {
     top: 1.5rem;
-  }
-
-  @media (min-width: 768px) {
-
-    .md\:md\:top-6 {
-      top: 1.5rem;
-    }
-  }
-
-  .md\:bottom-0 {
-    bottom: 0px;
   }
 
   .md\:m-6 {
