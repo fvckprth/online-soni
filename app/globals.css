@@ -56,3 +56,11 @@ mux-player {
 .right-arrow-cursor {
   cursor: url('/right-cursor.svg'), auto;
 }
+
+.enter-fs-cursor {
+  cursor: url('/enter-fs.svg'), auto;
+}
+
+.exit-fs-cursor {
+  cursor: url('/exit-fs.svg'), auto;
+}

@@ -587,6 +587,12 @@ video {
 .flex-grow {
   flex-grow: 1;
 }
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+.cursor-zoom-out {
+  cursor: zoom-out;
+}
 .flex-row {
   flex-direction: row;
 }
@@ -709,6 +715,14 @@ mux-player {
 
 .right-arrow-cursor {
   cursor: url('/right-cursor.svg'), auto;
+}
+
+.enter-fs-cursor {
+  cursor: url('/enter-fs.svg'), auto;
+}
+
+.exit-fs-cursor {
+  cursor: url('/exit-fs.svg'), auto;
 }
 
 .hover\:opacity-25:hover {

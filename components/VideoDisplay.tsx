@@ -12,8 +12,8 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
     const [isPaused, setIsPaused] = useState(false);  // New state for play/pause
     const videoRef = useRef(null);
     const containerStyles = isMinimized 
-      ? 'top-2 right-2 w-28 h-48' 
-      : 'top-0 left-0 w-full h-screen';
+      ? 'top-2 right-2 w-28 h-48 enter-fs-cursor' 
+      : 'top-0 left-0 w-full h-screen exit-fs-cursor';
   
   const toggleMute = () => {
       if (videoRef.current) {
