@@ -30,13 +30,14 @@ const toggleMute = () => {
             playbackId="DsWrR026AJqjOtlKB02HuCROgAPzwCP2ok0002HxsJy3pcY"
             streamType="on-demand"
             playsInline
+            loop
             autoPlay="any"
             muted={isMuted}
         />
         {!isMinimized && <button 
             type="button"
             onClick={toggleMute} 
-            className="absolute top-48 md:top-6 right-6 z-1000 text-xs md:text-base leading-4 tracking-tight text-white"
+            className="absolute bottom-48 md:bottom-6 right-6 z-1000 text-xs md:text-base leading-4 tracking-tight text-white"
             >
             {isMuted ? 'UNMUTE' : 'MUTE'}
         </button>}

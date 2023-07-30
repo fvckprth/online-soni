@@ -543,6 +543,9 @@ video {
 .top-48 {
   top: 12rem;
 }
+.bottom-48 {
+  bottom: 12rem;
+}
 .m-4 {
   margin: 1rem;
 }
@@ -719,6 +722,10 @@ mux-player {
 
   .md\:top-6 {
     top: 1.5rem;
+  }
+
+  .md\:bottom-6 {
+    bottom: 1.5rem;
   }
 
   .md\:m-6 {
