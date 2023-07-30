@@ -29,9 +29,10 @@ function MainContent() {
             >
                 {projects[currentIndex]?.leftImage && (
                     <Image 
+                        priority
                         src={projects[currentIndex].leftImage} 
                         layout='fill'
-                        className='object-cover'
+                        objectFit='cover'
                         alt={`Left image of ${projects[currentIndex].name}`}
                     />
                 )}
@@ -44,9 +45,10 @@ function MainContent() {
             >
                 {projects[currentIndex]?.rightImage && (
                     <Image 
-                        src={projects[currentIndex].rightImage} 
+                        priority
+                        src={projects[currentIndex].rightImage}
                         layout='fill'
-                        className='object-cover'
+                        objectFit='cover'
                         alt={`Right image of ${projects[currentIndex].name}`}
                     />
                 )}
