@@ -33,7 +33,7 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
             maxResolution="1080p"
             muted={isMuted}
         />
-        {!isMinimized && <button onClick={toggleMute} className="absolute bottom-6 right-8 z-10 text-xs md:text-base leading-4 tracking-tight text-white">
+        {!isMinimized && <button onClick={toggleMute} className="absolute top-6 right-8 z-10000 text-xs md:text-base leading-4 tracking-tight text-white">
           {isMuted ? 'UNMUTE' : 'MUTE'}
         </button>}
       </div>

@@ -543,6 +543,9 @@ video {
 .top-2 {
   top: 0.5rem;
 }
+.top-6 {
+  top: 1.5rem;
+}
 .z-0 {
   z-index: 0;
 }
@@ -723,6 +726,14 @@ mux-player {
     position: absolute;
   }
 
+  .md\:top-2 {
+    top: 0.5rem;
+  }
+
+  .md\:right-2 {
+    right: 0.5rem;
+  }
+
   .md\:m-6 {
     margin: 1.5rem;
   }
@@ -735,12 +746,24 @@ mux-player {
     height: 70vh;
   }
 
+  .md\:h-6 {
+    height: 1.5rem;
+  }
+
   .md\:w-\[860px\] {
     width: 860px;
   }
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-48 {
+    width: 12rem;
+  }
+
+  .md\:w-7 {
+    width: 1.75rem;
   }
 
   .md\:flex-row {
