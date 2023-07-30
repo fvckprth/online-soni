@@ -29,6 +29,7 @@ function MainContent() {
             >
                 {projects[currentIndex]?.leftImage && (
                     <Image 
+                        key={projects[currentIndex].leftImage}
                         priority
                         src={projects[currentIndex].leftImage} 
                         layout='fill'
@@ -45,11 +46,13 @@ function MainContent() {
             >
                 {projects[currentIndex]?.rightImage && (
                     <Image 
+                        key={projects[currentIndex].leftImage}
                         priority
                         src={projects[currentIndex].rightImage}
                         layout='fill'
                         objectFit='cover'
                         alt={`Right image of ${projects[currentIndex].name}`}
+                        unoptimized={true}
                     />
                 )}
             </div>
