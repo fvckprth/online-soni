@@ -45,6 +45,10 @@ mux-player {
   z-index: 2;
 }
 
+.way-up {
+  z-index: 1,000;
+}
+
 .left-arrow-cursor {
   cursor: url('/left-cursor.svg'), auto;
 }

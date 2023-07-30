@@ -37,7 +37,7 @@ const toggleMute = () => {
         {!isMinimized && <button 
             type="button"
             onClick={toggleMute} 
-            className="absolute bottom-6 md:bottom-6 right-6 z-1000 text-xs md:text-base leading-4 tracking-tight text-white"
+            className="absolute left-4 md:left-6 bottom-80 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white"
             >
             {isMuted ? 'UNMUTE' : 'MUTE'}
         </button>}

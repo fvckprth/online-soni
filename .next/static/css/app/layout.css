@@ -540,14 +540,35 @@ video {
 .top-2 {
   top: 0.5rem;
 }
-.top-48 {
-  top: 12rem;
+.top-6 {
+  top: 1.5rem;
+}
+.bottom-24 {
+  bottom: 6rem;
+}
+.bottom-32 {
+  bottom: 8rem;
+}
+.top-32 {
+  top: 8rem;
+}
+.left-6 {
+  left: 1.5rem;
+}
+.left-4 {
+  left: 1rem;
+}
+.left-12 {
+  left: 3rem;
 }
 .bottom-48 {
   bottom: 12rem;
 }
-.bottom-6 {
-  bottom: 1.5rem;
+.bottom-80 {
+  bottom: 20rem;
+}
+.right-0 {
+  right: 0px;
 }
 .m-4 {
   margin: 1rem;
@@ -705,6 +726,10 @@ mux-player {
   z-index: 2;
 }
 
+.way-up {
+  z-index: 1,000;
+}
+
 .left-arrow-cursor {
   cursor: url('/left-cursor.svg'), auto;
 }
@@ -723,12 +748,28 @@ mux-player {
     position: absolute;
   }
 
+  .md\:bottom-6 {
+    bottom: 1.5rem;
+  }
+
   .md\:top-6 {
     top: 1.5rem;
   }
 
-  .md\:bottom-6 {
-    bottom: 1.5rem;
+  .md\:right-4 {
+    right: 1rem;
+  }
+
+  .md\:right-6 {
+    right: 1.5rem;
+  }
+
+  .md\:left-0 {
+    left: 0px;
+  }
+
+  .md\:left-6 {
+    left: 1.5rem;
   }
 
   .md\:m-6 {
