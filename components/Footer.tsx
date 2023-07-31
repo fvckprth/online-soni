@@ -9,7 +9,7 @@ function Footer() {
                 </p>
                 <p className="leading-4 tracking-tight">
                     INQUIRIES<br/>
-                    <a href='mailto:contact@onlinesoni.com' className='underline underline-offset-4 decoration-from-font hover:opacity-25'>contact@onlinesoni.com</a>
+                    <a href='mailto:sonia.sabade@gmail.com' className='underline underline-offset-4 decoration-from-font hover:opacity-25'>sonia.sabade@gmail.com</a>
                 </p>
             </div>
 
@@ -21,7 +21,7 @@ function Footer() {
                 </p>
                 <p className='opacity-25 leading-4 tracking-tight'>
                     5’10”<br/>
-                    39EU / 8US / 6UK
+                    39.5EU / 8.5US / 6.5UK
                 </p>
             </div>
         </div>
