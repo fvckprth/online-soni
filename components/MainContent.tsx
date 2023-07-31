@@ -13,10 +13,26 @@ function MainContent() {
 
     useEffect(() => {
         getProjects().then(setProjects).catch(err => console.error('Failed to fetch projects', err));
+
+        // Add the event listener
+        window.addEventListener('keydown', handleKeyDown);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
     }, []);
 
     const updateIndex = (offset: number) => {
         setCurrentIndex((prevIndex) => (prevIndex + offset + projects.length) % projects.length);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'ArrowLeft') {
+            updateIndex(-1);
+        } else if (event.key === 'ArrowRight') {
+            updateIndex(1);
+        }
     };
 
     return (

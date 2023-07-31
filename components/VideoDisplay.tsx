@@ -39,6 +39,7 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
         <div className='flex justify-center items-center w-full h-full'>
           <MuxPlayer
               ref={videoRef}
+              thumbnailTime="0"
               style={{ height: '100%', maxWidth: '100%' }}
               playbackId="DsWrR026AJqjOtlKB02HuCROgAPzwCP2ok0002HxsJy3pcY"
               streamType="on-demand"
