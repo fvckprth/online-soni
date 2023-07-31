@@ -11,7 +11,7 @@ const cutiveMono = Cutive_Mono({
 });
 
 export const metadata = {
-  title: '◉ Sonia Sabade [ONLINE]',
+  title: '◉ Sonia Sabade',
   description: 'Based in NYC.',
   siteUrl: 'https://www.onlinesoni.com',
   twitterHandle: '@onlinesoni'
@@ -32,7 +32,7 @@ export default async function RootLayout({
         <meta name="keywords" content="Parth Patel, East Park, P307, New York Founder, Tech, Startups, Films, Music" />
         <link rel="canonical" href={metadata.siteUrl} />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/fallen-angels.jpeg" />
+        <link rel="apple-touch-icon" href="" />
 
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />

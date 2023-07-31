@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import MuxPlayer from '@mux/mux-player-react';
-import muxBlurHash from '@mux/blurhash';
 
 type VideoDisplayProps = {
     isMinimized: boolean;
@@ -46,7 +45,6 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
               playsInline
               loop
               autoPlay="any"
-              placeholder="{blurHashBase64}"
               muted={isMuted}
           />
           {!isMinimized && (
