@@ -12,8 +12,29 @@ function MainContent() {
     const [hoverRight, setHoverRight] = useState(false);
 
     useEffect(() => {
-        getProjects().then(setProjects).catch(err => console.error('Failed to fetch projects', err));
+        getProjects()
+            .then(fetchedProjects => {
+                const sortedProjects = fetchedProjects.sort((a, b) => {
+                    const aNumber = parseInt(a.name, 10);
+                    const bNumber = parseInt(b.name, 10);
+                    const aIsNumber = !isNaN(aNumber);
+                    const bIsNumber = !isNaN(bNumber);
+    
+                    if (aIsNumber && bIsNumber) {
+                        return aNumber - bNumber;
+                    }
+    
+                    if (aIsNumber) return -1;
+                    if (bIsNumber) return 1;
+    
+                    return a.name.localeCompare(b.name);
+                });
+                
+                setProjects(sortedProjects);
+            })
+            .catch(err => console.error('Failed to fetch projects', err));
     }, []);
+    
 
     const updateIndex = (offset: number) => {
         setCurrentIndex((prevIndex) => (prevIndex + offset + projects.length) % projects.length);
