@@ -52,14 +52,14 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
               <button 
                   type="button"
                   onClick={toggleMute} 
-                  className="absolute left-4 md:left-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white"
+                  className="absolute left-4 md:left-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white hover:opacity-25"
               >
                   {isMuted ? 'UNMUTE' : 'MUTE'}
               </button>
               <button 
                   type="button"
                   onClick={togglePlayPause} 
-                  className="absolute right-4 md:right-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white"
+                  className="absolute right-4 md:right-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white hover:opacity-25"
               >
                   {isPaused ? 'PLAY' : 'PAUSE'}
               </button>
