@@ -7,36 +7,27 @@ type VideoDisplayProps = {
 };
 
 function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
-  
     const [isMuted, setIsMuted] = useState(true);
     const [isPaused, setIsPaused] = useState(false);  
+    const [showTapText, setShowTapText] = useState(true);  // New state
     const videoRef = useRef(null);
     const containerStyles = isMinimized 
       ? 'top-2 right-2 w-28 h-48 enter-fs-cursor' 
       : 'top-0 left-0 w-full h-screen exit-fs-cursor';
 
-  
-  const toggleMute = () => {
-      if (videoRef.current) {
-        (videoRef.current as any).muted = !(videoRef.current as any).muted;
-      }
-      setIsMuted(!isMuted);
-  };
-  
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPaused) {
-        (videoRef.current as any).play();
-      } else {
-        (videoRef.current as any).pause();
-      }
-      setIsPaused(!isPaused);
-    }
-  };
-      
+    const handleVideoTap = () => {
+      setShowTapText(false);
+      onToggle();
+    };
+
     return (
-      <div className={`fixed ${containerStyles}`} onClick={onToggle}>
+      <div className={`fixed ${containerStyles}`} onClick={handleVideoTap}>
         <div className='flex justify-center items-center w-full h-full'>
+          {showTapText && (
+            <div className="absolute z-10 md:bottom-6 text-xs md:text-base leading-4 tracking-tight text-white hover:opacity-25">
+              TAP
+            </div>
+          )}
           <MuxPlayer
               ref={videoRef}
               thumbnailTime="0"
@@ -52,14 +43,32 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
             <>
               <button 
                   type="button"
-                  onClick={toggleMute} 
+                  onClick={e => {
+                    e.stopPropagation();
+                    const current = videoRef.current;
+                    if (current) {
+                      (current as any).muted = !(current as any).muted;
+                      setIsMuted(!isMuted);
+                    }
+                  }} 
                   className="absolute left-4 md:left-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white hover:opacity-25"
               >
                   {isMuted ? 'UNMUTE' : 'MUTE'}
               </button>
               <button 
                   type="button"
-                  onClick={togglePlayPause} 
+                  onClick={e => {
+                    e.stopPropagation();
+                    const current = videoRef.current;
+                    if (current) {
+                      if (isPaused) {
+                        (current as any).play();
+                      } else {
+                        (current as any).pause();
+                      }
+                      setIsPaused(!isPaused);
+                    }
+                  }} 
                   className="absolute right-4 md:right-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white hover:opacity-25"
               >
                   {isPaused ? 'PLAY' : 'PAUSE'}
@@ -70,6 +79,5 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
       </div>
     );
 }
-
 
 export default VideoDisplay;

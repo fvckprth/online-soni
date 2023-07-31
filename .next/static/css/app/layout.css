@@ -543,6 +543,9 @@ video {
 .top-2 {
   top: 0.5rem;
 }
+.z-10 {
+  z-index: 10;
+}
 .m-4 {
   margin: 1rem;
 }
@@ -633,6 +636,13 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.font-bold {
+  font-weight: 700;
 }
 .leading-4 {
   line-height: 1rem;
