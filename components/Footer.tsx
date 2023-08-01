@@ -11,7 +11,7 @@ function Footer() {
           INSTAGRAM<br/>
           <a 
             href='https://www.instagram.com/onlinesoni/' 
-            className='underline underline-offset-4 decoration-from-font hover:opacity-25'
+            className='underline underline-offset-4 decoration-from-font hover:opacity-25 plausible-event-name=click_onlinesoni plausible-event-position=footer'
             onClick={() => plausible('click_onlinesoni')}
           >
             @onlinesoni
@@ -21,7 +21,7 @@ function Footer() {
           INQUIRIES<br/>
           <a 
             href='mailto:sonia.sabade@gmail.com' 
-            className='underline underline-offset-4 decoration-from-font hover:opacity-25'
+            className='underline underline-offset-4 decoration-from-font hover:opacity-25 plausible-event-name=click_sonia_email plausible-event-position=footer'
             onClick={() => plausible('click_sonia_email')}
           >
             sonia.sabade@gmail.com
