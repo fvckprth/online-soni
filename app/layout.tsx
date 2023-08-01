@@ -28,6 +28,8 @@ export default async function RootLayout({
         <Head>
           <PlausibleProvider 
           domain='onlinesoni.com'
+          taggedEvents={true}
+          trackLocalhost={true}
           />
           <meta charSet="UTF-8" />
           <title>{metadata.title}</title>

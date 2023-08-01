@@ -22,14 +22,13 @@ const nextConfig = {
   async function rewrites() {
     return [
       {
-        source: '/js/script.js',
+        source: '/js/script.tagged-events.js',
         destination: 'https://plausible.io/js/script.js'
       },
       {
         source: '/api/event',
         destination: 'https://plausible.io/api/event'
       },
-      // You can also add more rewrites for other Plausible extensions as mentioned in the instructions
     ];
   };
   
