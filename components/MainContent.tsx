@@ -49,7 +49,7 @@ function MainContent() {
             >
                 {showLeftArrow && (
                     <div className="absolute top--1 left--1 p-2 z-10 bg-white md:hidden">
-                        <Image src="/left-arrow.svg" alt="left-arrow" width={12} height={12} />
+                        <Image src="/left-arrow.svg" alt="left-arrow" width={8} height={8} />
                     </div>
                 )}
                 {projects.map((project, index) => (
@@ -76,7 +76,7 @@ function MainContent() {
             >
                 {showRightArrow && (
                     <div className="absolute bottom-0 right-0 p-2 bg-white z-10 md:hidden">
-                        <Image src="/right-arrow.svg" alt="right-mobile-arrow" width={12} height={12} />
+                        <Image src="/right-arrow.svg" alt="right-mobile-arrow" width={8} height={8} />
                     </div>
                 )}
                 {projects.map((project, index) => (
