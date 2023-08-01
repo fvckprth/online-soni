@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import './globals.css';
 import { Cutive_Mono } from '@next/font/google';
+import PlausibleProvider from 'next-plausible'
 
 const cutiveMono = Cutive_Mono({
   variable: '--font-cutive-mono',
@@ -25,7 +26,7 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <Head>
-        <script defer data-domain="onlinesoni.com" src="https://plausible.io/js/script.js"></script>
+        <PlausibleProvider domain='https://www.onlinesoni.com' />
         <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
