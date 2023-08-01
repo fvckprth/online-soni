@@ -25,6 +25,7 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <Head>
+        <script defer data-domain="onlinesoni.com" src="https://plausible.io/js/script.js"></script>
         <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
