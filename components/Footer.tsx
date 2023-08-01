@@ -28,8 +28,19 @@ function Footer() {
           </a>
         </p>
       </div>
-    </div>
-  );
+                  {/* Second Division */}
+                  <div className='flex flex-row gap-12 md:gap-12 text-xs md:text-base leading-4 tracking-tight'>
+                <p className='opacity-25 leading-4 tracking-tight'>
+                    HEIGHT<br/>
+                    SHOES
+                </p>
+                <p className='opacity-25 leading-4 tracking-tight'>
+                    5’10”<br/>
+                    39.5EU / 8.5US / 6.5UK
+                </p>
+            </div>
+        </div>
+    );
 }
 
 export default Footer;
