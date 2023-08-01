@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { getProjects } from '@/sanity/sanity-utils';
@@ -12,9 +10,24 @@ function MainContent() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hoverLeft, setHoverLeft] = useState(false);
     const [hoverRight, setHoverRight] = useState(false);
+    const [showLeftArrow, setShowLeftArrow] = useState(true);
+    const [showRightArrow, setShowRightArrow] = useState(true);
 
     useEffect(() => {
         getProjects().then(setProjects).catch(err => console.error('Failed to fetch projects', err));
+    }, []);
+
+    useEffect(() => {
+        const hideArrows = () => {
+            setShowLeftArrow(false);
+            setShowRightArrow(false);
+        };
+    
+        document.addEventListener('click', hideArrows);
+    
+        return () => {
+            document.removeEventListener('click', hideArrows);
+        };
     }, []);
 
     const updateIndex = (offset: number) => {
@@ -28,10 +41,17 @@ function MainContent() {
                 onClick={() => {
                     updateIndex(-1);
                     plausible('tap_image_left');
+                    setShowLeftArrow(false);
+                    setShowRightArrow(false);
                 }}
                 onMouseEnter={() => setHoverLeft(true)}
                 onMouseLeave={() => setHoverLeft(false)}
             >
+                {showLeftArrow && (
+                    <div className="absolute top--1 left--1 p-2 z-10 bg-white md:hidden">
+                        <Image src="/left-arrow.svg" alt="left-arrow" width={12} height={12} />
+                    </div>
+                )}
                 {projects.map((project, index) => (
                     <Image 
                         key={index}
@@ -48,10 +68,17 @@ function MainContent() {
                 onClick={() => {
                     updateIndex(1);
                     plausible('tap_image_right');
+                    setShowRightArrow(false);
+                    setShowLeftArrow(false);
                 }}
                 onMouseEnter={() => setHoverRight(true)}
                 onMouseLeave={() => setHoverRight(false)}
             >
+                {showRightArrow && (
+                    <div className="absolute bottom-0 right-0 p-2 bg-white z-10 md:hidden">
+                        <Image src="/right-arrow.svg" alt="right-mobile-arrow" width={12} height={12} />
+                    </div>
+                )}
                 {projects.map((project, index) => (
                     <Image 
                         key={index}
@@ -64,7 +91,7 @@ function MainContent() {
                 ))}
             </div>
         </div>
-    );
+    );    
 }
 
 export default MainContent;
