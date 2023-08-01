@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import MuxPlayer from '@mux/mux-player-react';
+import { usePlausible } from 'next-plausible';
 
 type VideoDisplayProps = {
     isMinimized: boolean;
@@ -7,9 +8,10 @@ type VideoDisplayProps = {
 };
 
 function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
+    const plausible = usePlausible();
     const [isMuted, setIsMuted] = useState(true);
-    const [isPaused, setIsPaused] = useState(false);  
-    const [showTapText, setShowTapText] = useState(true);  // New state
+    const [isPaused, setIsPaused] = useState(false);
+    const [showTapText, setShowTapText] = useState(true);
     const videoRef = useRef(null);
     const containerStyles = isMinimized 
       ? 'top-2 right-2 w-28 h-48 enter-fs-cursor' 
@@ -18,6 +20,11 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
     const handleVideoTap = () => {
       setShowTapText(false);
       onToggle();
+      if (isMinimized) {
+        plausible('video_fullscreen');
+      } else {
+        plausible('video_minimize');
+      }
     };
 
     return (
@@ -49,6 +56,11 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
                     if (current) {
                       (current as any).muted = !(current as any).muted;
                       setIsMuted(!isMuted);
+                      if (isMuted) {
+                        plausible('video_unmute');
+                      } else {
+                        plausible('video_mute');
+                      }
                     }
                   }} 
                   className="absolute left-4 md:left-6 md:bottom-6 way-up text-xs md:text-base leading-4 tracking-tight text-white hover:opacity-25"
@@ -63,8 +75,10 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
                     if (current) {
                       if (isPaused) {
                         (current as any).play();
+                        plausible('video_play');
                       } else {
                         (current as any).pause();
+                        plausible('video_pause');
                       }
                       setIsPaused(!isPaused);
                     }
@@ -81,3 +95,4 @@ function VideoDisplay({ isMinimized, onToggle }: VideoDisplayProps) {
 }
 
 export default VideoDisplay;
+
