@@ -12,7 +12,7 @@ function Footer() {
           <a 
             href='https://www.instagram.com/onlinesoni/' 
             className='underline underline-offset-4 decoration-from-font hover:opacity-25'
-            onClick={() => plausible('click_instagram')}
+            onClick={() => plausible('click_onlinesoni')}
           >
             @onlinesoni
           </a>
@@ -22,7 +22,7 @@ function Footer() {
           <a 
             href='mailto:sonia.sabade@gmail.com' 
             className='underline underline-offset-4 decoration-from-font hover:opacity-25'
-            onClick={() => plausible('click_email')}
+            onClick={() => plausible('click_sonia_email')}
           >
             sonia.sabade@gmail.com
           </a>
