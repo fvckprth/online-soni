@@ -34,6 +34,15 @@ function MainContent() {
         setCurrentIndex((prevIndex) => (prevIndex + offset + projects.length) % projects.length);
     };
 
+    const getProjectImage = (index: number, side: 'left' | 'right') => {
+        if (projects.length === 0) {
+            return '';  // Return a default image URL or an empty string
+        }        
+        
+        const project = projects[(index + projects.length) % projects.length];
+        return side === 'left' ? project.leftImage : project.rightImage;
+    };
+
     return (
         <div className='flex space-x-3 md:space-x-5 w-full md:w-full h-[30vh] md:h-[70vh] mx-auto'>
             <div 
@@ -48,20 +57,17 @@ function MainContent() {
                 onMouseLeave={() => setHoverLeft(false)}
             >
                 {showLeftArrow && (
-                    <div className="absolute top--1 left--1 p-2 z-10 bg-white md:hidden">
+                    <div className="absolute top--1 left--1 p-2 z-10 bg-white">
                         <Image src="/left-arrow.svg" alt="left-arrow" width={8} height={8} />
                     </div>
                 )}
-                {projects.map((project, index) => (
-                    <Image 
-                        key={index}
-                        priority
-                        src={project.leftImage} 
-                        layout='fill'
-                        className={`object-cover ${currentIndex === index ? 'block' : 'hidden'}`}
-                        alt={`Left image of ${project.name}`}
-                    />
-                ))}
+                <Image 
+                    priority
+                    src={getProjectImage(currentIndex - 1, 'left')} 
+                    layout='fill'
+                    className='object-cover'
+                    alt={`Left image of ${projects.length > 0 ? projects[currentIndex].name : 'default'}`}
+                />
             </div>
             <div 
                 className={`relative flex-grow w-0 ${hoverRight ? 'right-arrow-cursor' : ''}`} 
@@ -75,20 +81,17 @@ function MainContent() {
                 onMouseLeave={() => setHoverRight(false)}
             >
                 {showRightArrow && (
-                    <div className="absolute bottom-0 right-0 p-2 bg-white z-10 md:hidden">
+                    <div className="absolute bottom-0 right-0 p-2 bg-white z-10">
                         <Image src="/right-arrow.svg" alt="right-mobile-arrow" width={8} height={8} />
                     </div>
                 )}
-                {projects.map((project, index) => (
-                    <Image 
-                        key={index}
-                        priority
-                        src={project.rightImage}
-                        layout='fill'
-                        className={`object-cover ${currentIndex === index ? 'block' : 'hidden'}`}
-                        alt={`Right image of ${project.name}`}
-                    />
-                ))}
+                <Image 
+                    priority
+                    src={getProjectImage(currentIndex + 1, 'right')} 
+                    layout='fill'
+                    className='object-cover'
+                    alt={`Right image of ${projects.length > 0 ? projects[currentIndex].name : 'default'}`}
+                />
             </div>
         </div>
     );    
